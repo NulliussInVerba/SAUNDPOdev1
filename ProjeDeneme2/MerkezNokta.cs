@@ -9,18 +9,27 @@ namespace ProjeDeneme2
 {
     internal class MerkezNokta
     {
-        public int x
+        public double _merkezX, _merkezY;
+        public double merkezX
         {
+            get
+            {
+                return _merkezX;
+            }
             set
             {
-                x = value;
+                _merkezX = value;
             }
         }
-        public int merkezY
+        public double merkezY
         {
+            get
+            {
+                return _merkezY;
+            }
             set
             {
-                merkezY = value;
+                _merkezY = value;
             }
         }
         //x ve y atandı
@@ -28,11 +37,16 @@ namespace ProjeDeneme2
 
     internal class Cember : MerkezNokta
     {
-        public int yaricap
+        public double _yaricap;
+        public double yaricap
         {
+            get
+            {
+                return _yaricap;
+            }
             set
             {
-                yaricap = value;
+                _yaricap = value;
             }
         }
     }
@@ -40,11 +54,16 @@ namespace ProjeDeneme2
 
     internal class Kure : Cember
     {
-        public int merkezZ
+        public double _merkezZ;
+        public double merkezZ
         {
+            get
+            {
+                return _merkezZ;
+            }
             set
             {
-                merkezZ = value;
+                _merkezZ = value;
             }
         }
     }
@@ -52,18 +71,28 @@ namespace ProjeDeneme2
 
     internal class Silindir : Cember
     {
-        public int merkezZ
+        public double _merkezZ;
+        public double _yukseklik;
+        public double merkezZ
         {
+            get
+            {
+                return _merkezZ;
+            }
             set
             {
-                merkezZ = value;
+                _merkezZ = value;
             }
         }
-        public int Yukseklik
+        public double yukseklik
         {
+            get
+            {
+                return _yukseklik;
+            }
             set
             {
-                Yukseklik = value;
+                _yukseklik = value;
             }
         }
     }
@@ -71,18 +100,28 @@ namespace ProjeDeneme2
 
     internal class Dortgen : MerkezNokta
     {
-        public int boy
+        public double _boy;
+        public double _en;
+        public double boy
         {
+            get
+            {
+                return _boy;
+            }
             set
             {
-                boy = value;
+                _boy = value;
             }
         }
-        public int en
+        public double en
         {
+            get
+            {
+                return _en;
+            }
             set
             {
-                en = value;
+                _en = value;
             }
         }
     }
@@ -90,18 +129,28 @@ namespace ProjeDeneme2
 
     internal class DikdortgenPrizma : Dortgen
     {
-        public int merkezZ
+        public double _merkezZ;
+        public double _derinlik;
+        public double merkezZ
         {
+            get
+            {
+                return _merkezZ;
+            }
             set
             {
-                merkezZ = value;
+                _merkezZ = value;
             }
         }
-        public int derinlik
+        public double derinlik
         {
+            get
+            {
+                return _derinlik;
+            }
             set
             {
-                derinlik = value;
+                _derinlik = value;
             }
         }
     }
