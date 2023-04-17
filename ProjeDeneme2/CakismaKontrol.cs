@@ -104,9 +104,18 @@ namespace ProjeDeneme2
             }
         }
         
-
-
-
+        public static bool noktaCember(double noktaX, double noktaY, double cemberX, double cemberY, double cemberYaricap)
+        {
+            double pisagor=Math.Sqrt(noktaX-cemberX)+Math.Sqrt(noktaY-cemberY);
+            if (pisagor > cemberYaricap * cemberYaricap)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         
     }
