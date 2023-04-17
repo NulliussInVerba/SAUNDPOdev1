@@ -117,6 +117,19 @@ namespace ProjeDeneme2
             }
         }
 
+        public static bool dortgenDortgen(double noktaX, double noktaY, double dortgenEn, double dortgenBoy, double nokta2X, double nokta2Y, double dortgen2En, double dortgen2Boy)
+        {
+
+            if (Math.Abs(noktaX-nokta2X)==(dortgenEn/2+dortgen2En/2)&& Math.Abs(noktaY - nokta2Y) == (dortgenBoy / 2 + dortgen2Boy / 2))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         
     }
 
