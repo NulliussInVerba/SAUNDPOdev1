@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -130,7 +131,24 @@ namespace ProjeDeneme2
             }
         }
 
-        
+        public static bool dortgenCember(double noktaX, double noktaY, double dortgenEn, double dortgenBoy, double nokta2X, double nokta2Y, double cemberYaricap)
+        {
+            //FORMÜL HATALI SONRADAN TEKRAR BAK
+            
+            return true;
+        }
+
+        public static bool cemberCember(double noktaX, double noktaY, double cember1Yaricap, double nokta2X, double nokta2Y, double cember2Yaricap)
+        {
+            if (Math.Sqrt(Math.Pow(noktaX - nokta2X, 2) + Math.Pow(noktaY - nokta2Y,2)) == cember1Yaricap+cember2Yaricap)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     
