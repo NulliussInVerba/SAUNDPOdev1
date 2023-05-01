@@ -149,6 +149,18 @@ namespace ProjeDeneme2
                 return false;
             }
         }
+
+        public static bool noktaKure(double noktaX, double noktaY, double noktaZ, double kureYaricap, double nokta2X, double nokta2Y, double nokta2Z)
+        {
+            if (Math.Sqrt(Math.Pow(noktaX-nokta2X,2)+Math.Pow(noktaY-nokta2Y,2)+Math.Pow(noktaZ-nokta2Z,2))>=kureYaricap)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 
     

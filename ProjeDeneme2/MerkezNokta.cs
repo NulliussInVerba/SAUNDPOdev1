@@ -35,6 +35,22 @@ namespace ProjeDeneme2
         //x ve y atandı
     }
 
+    internal class Merkez3DNokta:MerkezNokta
+    {
+        public double _merkezZ;
+        public double merkezZ
+        {
+            get
+            {
+                return _merkezZ;
+            }
+            set
+            {
+                _merkezZ = value;
+            }
+        }
+    }
+
     internal class Cember : MerkezNokta
     {
         public double _yaricap;
