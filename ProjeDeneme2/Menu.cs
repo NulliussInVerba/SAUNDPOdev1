@@ -271,7 +271,91 @@ namespace ProjeDeneme2
                             Console.WriteLine("({0},{1},{2}) merkez noktalı {3} enli, {4} boylu, {5} derinlikli dikdörgen prizma ile ({6},{7},{8}) notası birbiri ile çakışmaktadır.", dikdortgenPrizma1.merkezX, dikdortgenPrizma1.merkezY, dikdortgenPrizma1.merkezZ, dikdortgenPrizma1.en, dikdortgenPrizma1.boy, dikdortgenPrizma1.derinlik, nokta2.merkezX, nokta2.merkezY, nokta2.merkezZ);
                         }
                         break;
-                    case 8:
+                    case 8://nokta silidir
+                        Silindir silindir = new Silindir();
+                        Merkez3DNokta nokta3 = new Merkez3DNokta();
+
+                        Console.WriteLine("Silindir için merkez X noktası giriniz: ");
+                        silindir.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Silindir için merkez Y noktası giriniz: ");
+                        silindir.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Silindir için merkez Z noktası giriniz: ");
+                        silindir.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Silindir için boy değeri giriniz: ");
+                        silindir.yukseklik = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Silindir için yarıçarp değeri giriniz: ");
+                        silindir.yaricap=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Nokta için X noktası giriniz: ");
+                        nokta3.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Nokta için Y noktası giriniz: ");
+                        nokta3.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Nokta için Z noktası giriniz: ");
+                        nokta3.merkezZ = Double.Parse(Console.ReadLine());
+
+                        cakismaKontrol = CakismaKontrol.noktaSilindir(silindir.merkezX, silindir.merkezY, silindir.merkezZ, silindir.yukseklik, silindir.yaricap, nokta3.merkezX, nokta3.merkezY, nokta3.merkezZ);
+
+                        if (cakismaKontrol)
+                        {
+                            Console.WriteLine("({0},{1},{2}) merkez noktalı {3} boylu, {4} yarıçaplı silindir ile ({6},{7},{8}) notası birbiri ile çakışmaktadır.", silindir.merkezX, silindir.merkezY, silindir.merkezZ, silindir.yukseklik, silindir.yaricap, nokta3.merkezX, nokta3.merkezY, nokta3.merkezZ);
+                        }
+                        else
+                        {
+                            Console.WriteLine("({0},{1},{2}) merkez noktalı {3} boylu, {4} yarıçaplı silindir ile ({6},{7},{8}) notası birbiri ile çakışmamaktadır.", silindir.merkezX, silindir.merkezY, silindir.merkezZ, silindir.yukseklik, silindir.yaricap, nokta3.merkezX, nokta3.merkezY, nokta3.merkezZ);
+                        }
+                        break;
+                    case 9://silindir silindir
+                        Silindir silindir1 = new Silindir();
+                        Silindir silindir2 = new Silindir();
+
+                        Console.WriteLine("İlk silindir için merkez X noktası giriniz: ");
+                        silindir1.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk silindir için merkez Y noktası giriniz: ");
+                        silindir1.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk silindir için merkez Z noktası giriniz: ");
+                        silindir1.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk silindir için boy değeri giriniz: ");
+                        silindir1.yukseklik = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk silindir için yarıçarp değeri giriniz: ");
+                        silindir1.yaricap = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci silindir için merkez X noktası giriniz: ");
+                        silindir2.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci silindir için merkez Y noktası giriniz: ");
+                        silindir2.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci silindir için merkez Z noktası giriniz: ");
+                        silindir2.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci silindir için boy değeri giriniz: ");
+                        silindir2.yukseklik = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci silindir için yarıçarp değeri giriniz: ");
+                        silindir2.yaricap = Double.Parse(Console.ReadLine());
+
+                        cakismaKontrol = CakismaKontrol.silindirSilindir(silindir1.merkezX, silindir1.merkezY, silindir1.merkezZ, silindir1.yukseklik, silindir1.yaricap, silindir2.merkezX, silindir2.merkezY, silindir2.merkezZ, silindir2.yukseklik, silindir2.yaricap);
+
+                        if (cakismaKontrol)
+                        {
+                            Console.WriteLine("({0},{1},{2}) merkez noktalı {3} boylu, {4} yarıçaplı silindir ile ({6},{7},{8}) noktalı {9} boylu, {10} yarıçaplı silindir birbiri ile çakışmaktadır.",silindir1.merkezX, silindir1.merkezY, silindir1.merkezZ, silindir1.yukseklik, silindir1.yaricap, silindir2.merkezX, silindir2.merkezY, silindir2.merkezZ, silindir2.yukseklik, silindir2.yaricap);
+                        }
+                        else
+                        {
+                            Console.WriteLine("({0},{1},{2}) merkez noktalı {3} boylu, {4} yarıçaplı silindir ile ({6},{7},{8}) noktalı {9} boylu, {10} yarıçaplı silindir birbiri ile çakışmamaktadır.", silindir1.merkezX, silindir1.merkezY, silindir1.merkezZ, silindir1.yukseklik, silindir1.yaricap, silindir2.merkezX, silindir2.merkezY, silindir2.merkezZ, silindir2.yukseklik, silindir2.yaricap);
+                        }
+                        break;
+                    case 10://küre küre
 
                         break;
                 }

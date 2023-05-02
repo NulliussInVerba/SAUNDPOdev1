@@ -174,7 +174,29 @@ namespace ProjeDeneme2
             }
         }
 
-        public static bool nokraSilindir(double silindirX, double prizmaY, double prizmaZ, double prizmaEn, double prizmaBoy, double prizmaDerinlik, double noktaX, double noktaY, double noktaZ)
+        public static bool noktaSilindir(double silindirX, double silindirY, double silindirZ, double silindirYukseklik, double silindirYaricap, double noktaX, double noktaY, double noktaZ)
+        {
+            if (Math.Abs(silindirY - noktaY) < silindirYukseklik / 2 && Math.Sqrt(Math.Pow(silindirX - noktaX, 2) + Math.Pow(silindirZ - noktaZ, 2))<silindirYaricap)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool silindirSilindir(double silindirX, double silindirY, double silindirZ, double silindirYukseklik, double silindirYaricap, double silindir2X, double silindir2Y, double silindir2Z, double silindir2Yukseklik, double silindir2Yaricap)
+        {
+            if (Math.Abs(silindirY-silindir2Y)<silindir2Yukseklik+silindirYukseklik&&Math.Sqrt(Math.Pow(silindir2X-silindirX,2)+Math.Pow(silindir2Z-silindirZ,2))<silindir2Yaricap+silindirYaricap)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     
