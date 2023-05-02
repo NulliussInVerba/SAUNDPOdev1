@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,7 +60,7 @@ namespace ProjeDeneme2
                         {
                             Console.WriteLine("({0},{1}) noktası ve ({2},{3}) merkezli, eni {4}, boyu {5} olan dörtgen birbiri ile çakışmamaktadır", merkez.merkezX, merkez.merkezY, dortgen.merkezX, dortgen.merkezY, dortgen.en, dortgen.boy);
                         }
-                        
+
                         break;
                     case 2://nokta çember çakışması
                         MerkezNokta merkez1 = new MerkezNokta();
@@ -123,7 +124,7 @@ namespace ProjeDeneme2
 
                         if (cakismaKontrol)
                         {
-                            Console.WriteLine("({0},{1}) merkezli, eni {2}, boyu {3} olan dikdörtgen ile ({4},{5}) merkezli, eni {6}, boyu {7} olan dikdörtgen birbiri ile çakışmaktadır", dortgen1.merkezX, dortgen1.merkezY, dortgen1.en, dortgen1.boy, dortgen2.merkezX, dortgen2.merkezY,dortgen2.en,dortgen2.boy);
+                            Console.WriteLine("({0},{1}) merkezli, eni {2}, boyu {3} olan dikdörtgen ile ({4},{5}) merkezli, eni {6}, boyu {7} olan dikdörtgen birbiri ile çakışmaktadır", dortgen1.merkezX, dortgen1.merkezY, dortgen1.en, dortgen1.boy, dortgen2.merkezX, dortgen2.merkezY, dortgen2.en, dortgen2.boy);
                         }
                         else
                         {
@@ -131,8 +132,146 @@ namespace ProjeDeneme2
                         }
                         break;
                     case 4://dörtgen çember çakışması
+                        Dortgen dortgen3 = new Dortgen();
+                        Cember cember1 = new Cember();
+
+                        Console.Write("Dörtgen için merkez X koordinatı giriniz: ");
+                        dortgen3.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.Write("Dörtgen için merkez Y koordinatı giriniz: ");
+                        dortgen3.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.Write("Dörtgen için merkez EN giriniz: ");
+                        dortgen3.en = Double.Parse(Console.ReadLine());
+
+                        Console.Write("Dörtgen için merkez BOY giriniz: ");
+                        dortgen3.boy = Double.Parse(Console.ReadLine());
+
+                        Console.Write("Çember için merkez X koordinatı giriniz: ");
+                        cember1.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.Write("Çember için merkez Y koordinatı giriniz: ");
+                        cember1.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.Write("Çember için merkez Y koordinatı giriniz: ");
+                        cember1.yaricap = Double.Parse(Console.ReadLine());
+
+                        cakismaKontrol = CakismaKontrol.dortgenCember(dortgen3.merkezX, dortgen3.merkezY, dortgen3.en, dortgen3.boy, cember1.merkezX, cember1.merkezY, cember1.yaricap);
+                        break;
+                    case 5:
+                        Cember cember2 = new Cember();
+                        Cember cember3 = new Cember();
+
+                        Console.Write("İlk çember için merkez X koordinatı giriniz: ");
+                        cember2.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.Write("İlk çember için merkez Y koordinatı giriniz: ");
+                        cember2.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.Write("İlk çember için merkez Y koordinatı giriniz: ");
+                        cember2.yaricap = Double.Parse(Console.ReadLine());
+
+                        Console.Write("İlk çember için merkez X koordinatı giriniz: ");
+                        cember3.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.Write("İlk çember için merkez Y koordinatı giriniz: ");
+                        cember3.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.Write("İlk çember için merkez Y koordinatı giriniz: ");
+                        cember3.yaricap = Double.Parse(Console.ReadLine());
+
+                        cakismaKontrol = CakismaKontrol.cemberCember(cember2.merkezX, cember2.merkezY, cember2.yaricap, cember3.merkezX, cember3.merkezY, cember3.yaricap);
+
+                        if (cakismaKontrol)
+                        {
+                            Console.WriteLine("({0},{1}) merkezli, yarıçapı {2} olan çember ile ({4},{5}) merkezli, yarıçapı {7} olan çember birbiri ile çakışmaktadır", cember2.merkezX, cember2.merkezY, cember2.yaricap, cember3.merkezX, cember3.merkezY, cember3.yaricap);
+                        }
+                        else
+                        {
+                            Console.WriteLine("({0},{1}) merkezli, yarıçapı {2} olan çember ile ({4},{5}) merkezli, yarıçapı {7} olan çember birbiri ile çakışmamaktadır", cember2.merkezX, cember2.merkezY, cember2.yaricap, cember3.merkezX, cember3.merkezY, cember3.yaricap);
+                        }
+                        break;
+
+                    case 6:
+                        Merkez3DNokta nokta1= new Merkez3DNokta();
+                        Kure kure1=new Kure();
+
+                        Console.WriteLine("Küre için merkez X noktası giriniz: ");
+                        kure1.merkezX=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre içim merkez Y noktası giriniz: ");
+                        kure1.merkezY=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre için merkez Z noktası giriniz: ");
+                        kure1.merkezZ=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre için yarıçap değeri giriniz: ");
+                        kure1.yaricap=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Nokta için X noktası giriniz: ");
+                        nokta1.merkezX= Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Nokta için Y noktası giriniz: ");
+                        nokta1.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Nokta için Z noktası giriniz: ");
+                        nokta1.merkezZ= Double.Parse(Console.ReadLine());
+
+                        cakismaKontrol = CakismaKontrol.noktaKure(kure1.merkezX, kure1.merkezY, kure1.merkezZ, kure1.yaricap, nokta1.merkezX, nokta1.merkezY, nokta1.merkezZ);
+
+                        if (cakismaKontrol)
+                        {
+                            Console.WriteLine("({0},{1},{2}) merkezli ,{3} yarıçaplı küre ile ({4},{5},{6}) koordinatlı nokta çakışmaktadır",kure1.merkezX,kure1.merkezY,kure1.merkezZ,kure1.yaricap,nokta1.merkezX,nokta1.merkezY,nokta1.merkezZ);
+                        }
+                        else
+                        {
+                            Console.WriteLine("({0},{1},{2}) merkezli ,{3} yarıçaplı küre ile ({4},{5},{6}) koordinatlı nokta çakışmamaktadır", kure1.merkezX, kure1.merkezY, kure1.merkezZ, kure1.yaricap, nokta1.merkezX, nokta1.merkezY, nokta1.merkezZ);
+                        }
+                        break;
+
+                    case 7://notka dikdörtgen prizma
+                        Merkez3DNokta nokta2 = new Merkez3DNokta();
+                        DikdortgenPrizma dikdortgenPrizma1=new DikdortgenPrizma();
+
+                        Console.WriteLine("Nokta için X noktası giriniz: ");
+                        nokta2.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Nokta için Y noktası giriniz: ");
+                        nokta2.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Nokta için Z noktası giriniz: ");
+                        nokta2.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Dikdörtgen prizma için merkez X noktası giriniz: ");
+                        dikdortgenPrizma1.merkezX=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Dikdörtgen prizma içim merkez Y noktası giriniz: ");
+                        dikdortgenPrizma1.merkezY=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Dikdörtgen prizma içim merkez Z noktası giriniz: ");
+                        dikdortgenPrizma1.merkezZ=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Dikdörtgen prizma için en giriniz: ");
+                        dikdortgenPrizma1.en=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Dikdörtgen prizma içim boy giriniz: ");
+                        dikdortgenPrizma1.boy=Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Dikdörtgen prizma için derinlik giriniz: ");
+                        dikdortgenPrizma1.derinlik=Double.Parse(Console.ReadLine());
+
+                        cakismaKontrol = CakismaKontrol.noktaDikdortgenPrizma(dikdortgenPrizma1.merkezX, dikdortgenPrizma1.merkezY, dikdortgenPrizma1.merkezZ, dikdortgenPrizma1.en, dikdortgenPrizma1.boy, dikdortgenPrizma1.derinlik, nokta2.merkezX, nokta2.merkezY, nokta2.merkezZ);
+
+                        if (cakismaKontrol)
+                        {
+                            dikdortgenPrizma1.merkezX, dikdortgenPrizma1.merkezY, dikdortgenPrizma1.merkezZ, dikdortgenPrizma1.en, dikdortgenPrizma1.boy, dikdortgenPrizma1.derinlik, nokta2.merkezX, nokta2.merkezY, nokta2.merkezZ}
+                        else
+                        {
+
+                        }
                         break;
                 }
+
             } while (true);
 
         }

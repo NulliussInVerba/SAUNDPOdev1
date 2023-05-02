@@ -161,6 +161,18 @@ namespace ProjeDeneme2
                 return true;
             }
         }
+
+        public static bool noktaDikdortgenPrizma(double prizmaX, double prizmaY, double prizmaZ, double prizmaEn, double prizmaBoy, double prizmaDerinlik, double noktaX, double noktaY, double noktaZ)
+        {
+            if (Math.Abs(prizmaX-noktaX)<prizmaBoy/2&&Math.Abs(prizmaY-noktaY)<prizmaEn/2&&Math.Abs(prizmaZ-noktaZ)<prizmaDerinlik/2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     
