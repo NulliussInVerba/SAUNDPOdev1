@@ -264,11 +264,15 @@ namespace ProjeDeneme2
 
                         if (cakismaKontrol)
                         {
-                            dikdortgenPrizma1.merkezX, dikdortgenPrizma1.merkezY, dikdortgenPrizma1.merkezZ, dikdortgenPrizma1.en, dikdortgenPrizma1.boy, dikdortgenPrizma1.derinlik, nokta2.merkezX, nokta2.merkezY, nokta2.merkezZ}
+                            Console.WriteLine("({0},{1},{2}) merkez noktalı {3} enli, {4} boylu, {5} derinlikli dikdörgen prizma ile ({6},{7},{8}) notası birbiri ile çakışmaktadır.", dikdortgenPrizma1.merkezX, dikdortgenPrizma1.merkezY, dikdortgenPrizma1.merkezZ, dikdortgenPrizma1.en, dikdortgenPrizma1.boy, dikdortgenPrizma1.derinlik, nokta2.merkezX, nokta2.merkezY, nokta2.merkezZ);
+                        }
                         else
                         {
-
+                            Console.WriteLine("({0},{1},{2}) merkez noktalı {3} enli, {4} boylu, {5} derinlikli dikdörgen prizma ile ({6},{7},{8}) notası birbiri ile çakışmaktadır.", dikdortgenPrizma1.merkezX, dikdortgenPrizma1.merkezY, dikdortgenPrizma1.merkezZ, dikdortgenPrizma1.en, dikdortgenPrizma1.boy, dikdortgenPrizma1.derinlik, nokta2.merkezX, nokta2.merkezY, nokta2.merkezZ);
                         }
+                        break;
+                    case 8:
+
                         break;
                 }
 

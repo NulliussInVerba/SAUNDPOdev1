@@ -173,6 +173,8 @@ namespace ProjeDeneme2
                 return false;
             }
         }
+
+        public static bool nokraSilindir(double silindirX, double prizmaY, double prizmaZ, double prizmaEn, double prizmaBoy, double prizmaDerinlik, double noktaX, double noktaY, double noktaZ)
     }
 
     
