@@ -356,7 +356,45 @@ namespace ProjeDeneme2
                         }
                         break;
                     case 10://küre küre
+                        Kure kure2 = new Kure();
+                        Kure kure3 = new Kure();
 
+                        Console.WriteLine("İlk küre için merkez X noktası giriniz: ");
+                        kure2.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk küre içim merkez Y noktası giriniz: ");
+                        kure2.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk küre için merkez Z noktası giriniz: ");
+                        kure2.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk küre için yarıçap değeri giriniz: ");
+                        kure2.yaricap = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci küre için merkez X noktası giriniz: ");
+                        kure3.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci küre içim merkez Y noktası giriniz: ");
+                        kure3.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci küre için merkez Z noktası giriniz: ");
+                        kure3.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci küre için yarıçap değeri giriniz: ");
+                        kure3.yaricap = Double.Parse(Console.ReadLine());
+
+                        cakismaKontrol = CakismaKontrol.kureKure(kure2.merkezX, kure2.merkezY, kure2.merkezZ, kure2.yaricap, kure3.merkezX, kure3.merkezY, kure3.merkezZ, kure3.yaricap);
+
+                        if (cakismaKontrol)
+                        {
+                            Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı küre ile ({4},{5},{6}) merkez noktalı, {7} yarıçaplı küre çakışmaktadır.", kure2.merkezX, kure2.merkezY, kure2.merkezZ, kure2.yaricap, kure3.merkezX, kure3.merkezY, kure3.merkezZ, kure3.yaricap);
+                        }
+                        else
+                        {
+                            Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı küre ile ({4},{5},{6}) merkez noktalı, {7} yarıçaplı küre çakışmamaktadır.", kure2.merkezX, kure2.merkezY, kure2.merkezZ, kure2.yaricap, kure3.merkezX, kure3.merkezY, kure3.merkezZ, kure3.yaricap);
+                        }
+                        break;
+                    case 11://Küre silindir
                         break;
                 }
 

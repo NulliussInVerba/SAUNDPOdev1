@@ -197,6 +197,20 @@ namespace ProjeDeneme2
                 return false;
             }
         }
+
+        public static bool kureKure(double kureX,double kureY, double kureZ, double kureYaricap, double kure2X,double kure2Y,double kure2Z, double kure2Yaricap)
+        {
+            if (Math.Sqrt(Math.Pow(kureX-kure2X,2)+ Math.Pow(kureY - kure2Y, 2)+ Math.Pow(kureZ - kure2Z, 2))<=kure2Yaricap+kureYaricap)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 
     
