@@ -20,6 +20,8 @@ namespace ProjeDeneme2
 
             int secenek = 1;
             bool cakismaKontrol;
+            double yuzeySayisi;
+            string yuzey;
 
             do
             {
@@ -394,7 +396,258 @@ namespace ProjeDeneme2
                             Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı küre ile ({4},{5},{6}) merkez noktalı, {7} yarıçaplı küre çakışmamaktadır.", kure2.merkezX, kure2.merkezY, kure2.merkezZ, kure2.yaricap, kure3.merkezX, kure3.merkezY, kure3.merkezZ, kure3.yaricap);
                         }
                         break;
-                    case 11://Küre silindir
+                    case 11://Küre silindir SONRA DENE
+
+                        break;
+                    case 12://küre yüzey
+                        Kure kure4 = new Kure();
+
+                        Console.WriteLine("Küre için merkez X noktası giriniz: ");
+                        kure4.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre içim merkez Y noktası giriniz: ");
+                        kure4.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre için merkez Z noktası giriniz: ");
+                        kure4.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre için yarıçap değeri giriniz: ");
+                        kure4.yaricap = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Yüzey hangi eksende olacaktır: ");
+                        yuzey = Console.ReadLine();
+
+                        
+                        switch (yuzey)
+                        {
+                            case "x":
+                                Console.WriteLine("Yüzey hangi değerde oluşturulacaktır: ");
+                                yuzeySayisi = Double.Parse(Console.ReadLine());
+
+                                if (kure4.merkezX+kure4.yaricap<=yuzeySayisi&& kure4.merkezX - kure4.yaricap >= yuzeySayisi)
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı küre ile x eksenli {4} değerli yüzey çakışmaktadır.", kure4.merkezX, kure4.merkezY, kure4.merkezZ, kure4.yaricap,yuzeySayisi);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı küre ile x eksenli {4} değerli yüzey çakışmamaktadır.", kure4.merkezX, kure4.merkezY, kure4.merkezZ, kure4.yaricap, yuzeySayisi);
+                                }
+                                break;
+                            case "y":
+                                Console.WriteLine("Yüzey hangi değerde oluşturulacaktır: ");
+                                yuzeySayisi = Double.Parse(Console.ReadLine());
+
+                                if (kure4.merkezY + kure4.yaricap  <= yuzeySayisi && kure4.merkezY - kure4.yaricap >= yuzeySayisi)
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı küre ile y eksenli {4} değerli yüzey çakışmaktadır.", kure4.merkezX, kure4.merkezY, kure4.merkezZ, kure4.yaricap, yuzeySayisi);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı küre ile y eksenli {4} değerli yüzey çakışmamaktadır.", kure4.merkezX, kure4.merkezY, kure4.merkezZ, kure4.yaricap, yuzeySayisi);
+                                }
+                                break;
+                            case "z":
+                                Console.WriteLine("Yüzey hangi değerde oluşturulacaktır: ");
+                                yuzeySayisi = Double.Parse(Console.ReadLine());
+
+                                if (kure4.merkezY + kure4.yaricap <= yuzeySayisi && kure4.merkezY - kure4.yaricap >= yuzeySayisi)
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı küre ile z eksenli {4} değerli yüzey çakışmaktadır.", kure4.merkezX, kure4.merkezY, kure4.merkezZ, kure4.yaricap, yuzeySayisi);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı küre ile z eksenli {4} değerli yüzey çakışmamaktadır.", kure4.merkezX, kure4.merkezY, kure4.merkezZ, kure4.yaricap, yuzeySayisi);
+                                }
+                                break;
+                            default:
+                                Console.WriteLine("Geçersiz bir yüzey girdiniz!");
+                                break;
+                        }                        
+                        break;
+                    case 13://yüzey dikdörtgen prizma
+                        DikdortgenPrizma dikdortgenPrizma2= new DikdortgenPrizma();
+                        
+
+                        Console.WriteLine("Küre için merkez X noktası giriniz: ");
+                        dikdortgenPrizma2.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre içim merkez Y noktası giriniz: ");
+                        dikdortgenPrizma2.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre için merkez Z noktası giriniz: ");
+                        dikdortgenPrizma2.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Dikdörtgen prizma için en değeri giriniz: ");
+                        dikdortgenPrizma2.en = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Dikdörtgen prizma için boy değeri giriniz: ");
+                        dikdortgenPrizma2.boy = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Dikdörtgen prizma için derinlik değeri giriniz: ");
+                        dikdortgenPrizma2.derinlik= Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Yüzey hangi eksende olacaktır: ");
+                        yuzey = Console.ReadLine();
+
+                        
+                        switch (yuzey)
+                        {
+                            case "x":
+                                Console.WriteLine("Yüzey hangi değerde oluşturulacaktır: ");
+                                yuzeySayisi = Double.Parse(Console.ReadLine());
+
+                                if (dikdortgenPrizma2.merkezX + dikdortgenPrizma2.en/2 <= yuzeySayisi && dikdortgenPrizma2.merkezX - dikdortgenPrizma2.en/2 >= yuzeySayisi)
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} enli dikdögen prizma ile x eksenli {4} değerli yüzey çakışmaktadır.", dikdortgenPrizma2.merkezX, dikdortgenPrizma2.merkezY, dikdortgenPrizma2.merkezZ, dikdortgenPrizma2.en, yuzeySayisi);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} enli dikdögen prizma ile x eksenli {4} değerli yüzey çakışmamaktadır.", dikdortgenPrizma2.merkezX, dikdortgenPrizma2.merkezY, dikdortgenPrizma2.merkezZ, dikdortgenPrizma2.en, yuzeySayisi);
+                                }
+                                break;
+                            case "y":
+                                Console.WriteLine("Yüzey hangi değerde oluşturulacaktır: ");
+                                yuzeySayisi = Double.Parse(Console.ReadLine());
+
+                                if (dikdortgenPrizma2.merkezY + dikdortgenPrizma2.boy / 2 <= yuzeySayisi && dikdortgenPrizma2.merkezY - dikdortgenPrizma2.boy / 2 >= yuzeySayisi)
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} boylu dikdögen prizma ile y eksenli {4} değerli yüzey çakışmaktadır.", dikdortgenPrizma2.merkezX, dikdortgenPrizma2.merkezY, dikdortgenPrizma2.merkezZ, dikdortgenPrizma2.boy, yuzeySayisi);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} boylu dikdögen prizma ile y eksenli {4} değerli yüzey çakışmamaktadır.", dikdortgenPrizma2.merkezX, dikdortgenPrizma2.merkezY, dikdortgenPrizma2.merkezZ, dikdortgenPrizma2.boy, yuzeySayisi);
+                                }
+                                break;
+                            case "z":
+                                Console.WriteLine("Yüzey hangi değerde oluşturulacaktır: ");
+                                yuzeySayisi = Double.Parse(Console.ReadLine());
+
+                                if (dikdortgenPrizma2.merkezZ + dikdortgenPrizma2.derinlik / 2 <= yuzeySayisi && dikdortgenPrizma2.merkezZ - dikdortgenPrizma2.derinlik / 2 >= yuzeySayisi)
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} derinlikli dikdögen prizma ile z eksenli {4} değerli yüzey çakışmaktadır.", dikdortgenPrizma2.merkezX, dikdortgenPrizma2.merkezY, dikdortgenPrizma2.merkezZ, dikdortgenPrizma2.derinlik, yuzeySayisi);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} derinlikli dikdögen prizma ile z eksenli {4} değerli yüzey çakışmaktadır.", dikdortgenPrizma2.merkezX, dikdortgenPrizma2.merkezY, dikdortgenPrizma2.merkezZ, dikdortgenPrizma2.derinlik, yuzeySayisi);
+                                }
+                                break;
+                            default:
+                                Console.WriteLine("Geçersiz bir yüzey girdiniz!");
+                                break;
+                        }
+                        break;
+                    case 14:
+                        Silindir silindir3 = new Silindir();
+
+                        Console.WriteLine("Küre için merkez X noktası giriniz: ");
+                        silindir3.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre içim merkez Y noktası giriniz: ");
+                        silindir3.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre için merkez Z noktası giriniz: ");
+                        silindir3.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Küre için yarıçap değeri giriniz: ");
+                        silindir3.yaricap = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Silindir için yükseklik giriniz: ");
+                        silindir3.yukseklik = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Yüzey hangi eksende olacaktır: ");
+                        yuzey = Console.ReadLine();
+
+
+                        switch (yuzey)
+                        {
+                            case "x":
+                                Console.WriteLine("Yüzey hangi değerde oluşturulacaktır: ");
+                                yuzeySayisi = Double.Parse(Console.ReadLine());
+
+                                if (silindir3.merkezX + silindir3.yaricap <= yuzeySayisi && silindir3.merkezX - silindir3.yaricap >= yuzeySayisi)
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı silindir ile x eksenli {4} değerli yüzey çakışmaktadır.", silindir3.merkezX, silindir3.merkezY, silindir3.merkezZ, silindir3.yaricap, yuzeySayisi);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı silindir ile x eksenli {4} değerli yüzey çakışmamaktadır.", silindir3.merkezX, silindir3.merkezY, silindir3.merkezZ, silindir3.yaricap, yuzeySayisi);
+                                }   
+                                break;
+                            case "y":
+                                Console.WriteLine("Yüzey hangi değerde oluşturulacaktır: ");
+                                yuzeySayisi = Double.Parse(Console.ReadLine());
+
+                                if (silindir3.merkezY + silindir3.yukseklik/2 <= yuzeySayisi && silindir3.merkezY - silindir3.yukseklik/2 >= yuzeySayisi)
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yükseklikli silindir ile y eksenli {4} değerli yüzey çakışmaktadır.", silindir3.merkezX, silindir3.merkezY, silindir3.merkezZ, silindir3.yukseklik, yuzeySayisi);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yükseklikli silindir ile y eksenli {4} değerli yüzey çakışmamaktadır.", silindir3.merkezX, silindir3.merkezY, silindir3.merkezZ, silindir3.yukseklik, yuzeySayisi);
+                                }
+                                break;
+                            case "z":
+                                Console.WriteLine("Yüzey hangi değerde oluşturulacaktır: ");
+                                yuzeySayisi = Double.Parse(Console.ReadLine());
+
+                                if (silindir3.merkezY + silindir3.yaricap <= yuzeySayisi && silindir3.merkezY - silindir3.yaricap >= yuzeySayisi)
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı silindir ile z eksenli {4} değerli yüzey çakışmaktadır.", silindir3.merkezX, silindir3.merkezY, silindir3.merkezZ, silindir3.yaricap, yuzeySayisi);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("({0},{1},{2}) merkez noktalı, {3} yarıçaplı silindir ile z eksenli {4} değerli yüzey çakışmamaktadır.", silindir3.merkezX, silindir3.merkezY, silindir3.merkezZ, silindir3.yaricap, yuzeySayisi);
+                                }
+                                break;
+                            default:
+                                Console.WriteLine("Geçersiz bir yüzey girdiniz!");
+                                break;
+                        }
+                        break;
+                    case 15://küre dikdörtgen prizma
+                        break;
+                    case 16://dikdötgen prizma dikdörtgen prizma
+                        DikdortgenPrizma dikdortgenPrizma3 = new DikdortgenPrizma();
+                        DikdortgenPrizma dikdortgenPrizma4 = new DikdortgenPrizma();
+
+                        Console.WriteLine("İlk dikdörtgenler prizması için merkez X noktası giriniz: ");
+                        dikdortgenPrizma3.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk dikdörtgenler prizması için merkez Y noktası giriniz: ");
+                        dikdortgenPrizma3.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk dikdörtgenler prizması için merkez Z noktası giriniz: ");
+                        dikdortgenPrizma3.merkezZ = Double.Parse(Console.ReadLine());
+                        
+                        Console.WriteLine("İlk dikdörtgenler prizması için en değeri giriniz: ");
+                        dikdortgenPrizma3.en = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk dikdörtgenler prizması için boy değeri giriniz: ");
+                        dikdortgenPrizma3.boy = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İlk dikdörtgenler prizması için derinlik değerini giriniz: ");
+                        dikdortgenPrizma3.derinlik = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci dikdörtgenler prizması için merkez X noktası giriniz: ");
+                        dikdortgenPrizma4.merkezX = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci dikdörtgenler prizması için merkez Y noktası giriniz: ");
+                        dikdortgenPrizma4.merkezY = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci dikdörtgenler prizması için merkez Z noktası giriniz: ");
+                        dikdortgenPrizma4.merkezZ = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci dikdörtgenler prizması için en değeri giriniz: ");
+                        dikdortgenPrizma4.en = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci dikdörtgenler prizması için boy değeri giriniz: ");
+                        dikdortgenPrizma4.boy = Double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("İkinci dikdörtgenler prizması için derinlik değerini giriniz: ");
+                        dikdortgenPrizma4.derinlik = Double.Parse(Console.ReadLine());
+
+                        cakismaKontrol=CakismaKontrol.dikdortgePrizmaDikdortgenPrizma(dikdortgenPrizma3.merkezX, dikdortgenPrizma3.merkezY, dikdortgenPrizma3.merkezZ, dikdortgenPrizma3.en, dikdortgenPrizma3.boy, dikdortgenPrizma3.derinlik, dikdortgenPrizma4.merkezX, dikdortgenPrizma4.merkezY, dikdortgenPrizma4.merkezZ, dikdortgenPrizma4.en, dikdortgenPrizma4.boy, dikdortgenPrizma4.derinlik)
+
                         break;
                 }
 

@@ -210,7 +210,7 @@ namespace ProjeDeneme2
             }
         }
 
-
+        public static bool dikdortgePrizmaDikdortgenPrizma(double merkezX, double merkezY, double merkezZ,)
     }
 
     
